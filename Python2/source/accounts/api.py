@@ -6,3 +6,4 @@ from .serializers import LoginUserSerializer
 class LoginView(generics.CreateAPIView):
     serializer_class = LoginUserSerializer
     queryset = get_user_model().objects.all()
+    permission_classes = (IsAuthenticated, )
